@@ -64,6 +64,7 @@
     self.duration = 0.5;
     self.progressArcWidth = 3.0f;
     self.wrapperArcWidth = 1.f;
+    self.clockwise = YES;
 }
 
 - (void)drawRect:(CGRect)rect
@@ -89,8 +90,10 @@
     // Offset
     CGFloat offset = - M_PI_2;
     
+    //direction
+    CGFloat direction = self.clockwise ? 1 : -1;
     // EndAngle
-    CGFloat endAngle =  self.currentProgress * 2 * M_PI + offset;
+    CGFloat endAngle =  self.currentProgress * 2 * M_PI * direction + offset;
     
     // Center
     CGRect rect = self.bounds;
@@ -104,7 +107,7 @@
                                                            radius:radius
                                                        startAngle:offset
                                                          endAngle:endAngle
-                                                        clockwise:1];
+                                                        clockwise:self.clockwise];
     
     return arcPath.CGPath;
 }
