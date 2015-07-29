@@ -90,8 +90,9 @@
     // Offset
     CGFloat offset = - M_PI_2;
     
-    //direction
+    // Direction
     CGFloat direction = self.clockwise ? 1 : -1;
+    
     // EndAngle
     CGFloat endAngle =  self.currentProgress * 2 * M_PI * direction + offset;
     

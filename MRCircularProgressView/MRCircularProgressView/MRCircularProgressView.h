@@ -44,7 +44,7 @@
 // Color of wrapper arc
 @property (strong, nonatomic) UIColor *wrapperColor;
 
-//direction of arc progress
+// Direction of arc progress
 @property (nonatomic) BOOL clockwise;
 
 // Set new progress (0.0f - 1.0f) with animation option
